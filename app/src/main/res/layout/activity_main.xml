@@ -6,6 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="163dp"
+        android:layout_height="184dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="163dp"
+        android:layout_height="184dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="163dp"
+        android:layout_height="184dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="797dp"
+        android:layout_height="85dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/offline_blackdialog_background" />
+
+    <TextView
+        android:id="@+id/textView_moneyCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="$300,000,000"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_buyMoney"
+        android:layout_width="33dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="12dp"
+        android:clickable="true"
+        app:fabCustomSize="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_moneyCounter"
+        app:layout_constraintStart_toEndOf="@+id/textView_moneyCounter"
+        app:layout_constraintTop_toTopOf="@+id/textView_moneyCounter"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
     <Button
         android:id="@+id/button_spin"
         android:layout_width="137dp"
@@ -16,36 +85,58 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_moneyCounter"
+    <Button
+        android:id="@+id/button_betMinus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="$300,000,000"
-        android:textSize="20sp"
+        android:layout_marginEnd="16dp"
+        android:text="Bet -"
+        app:layout_constraintBottom_toBottomOf="@+id/button_betAdd"
+        app:layout_constraintEnd_toStartOf="@+id/button_betAdd"
+        app:layout_constraintTop_toTopOf="@+id/button_betAdd" />
+
+    <Button
+        android:id="@+id/button_betAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Bet +"
+        app:layout_constraintBottom_toBottomOf="@+id/button_spin"
+        app:layout_constraintEnd_toStartOf="@+id/button_spin"
+        app:layout_constraintTop_toTopOf="@+id/button_spin" />
+
+    <TextView
+        android:id="@+id/textView_moneyWon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Winnings: $8,000,000,000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_betMinus"
+        app:layout_constraintEnd_toStartOf="@+id/button_betMinus"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_buyMoney"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="-10dp"
-        android:clickable="true"
-        app:fabCustomSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_moneyCounter"
-        app:layout_constraintStart_toEndOf="@+id/textView_moneyCounter"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:layout_constraintTop_toTopOf="@+id/button_betMinus" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView_betCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="48dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_spin" />
+        android:layout_marginBottom="8dp"
+        android:text="Bet: $1,000,000"
+        app:layout_constraintBottom_toTopOf="@+id/button_betAdd"
+        app:layout_constraintEnd_toEndOf="@+id/button_betAdd"
+        app:layout_constraintStart_toStartOf="@+id/button_betMinus" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="119dp"
+        android:layout_height="117dp"
+        android:duration="10"
+        android:fromYDelta="-100%"
+        android:toYDelta="0"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
