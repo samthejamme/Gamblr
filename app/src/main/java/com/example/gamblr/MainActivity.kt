@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var icons : List<Int>
     @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // todo: implement a bunch of icons using photoIDs
