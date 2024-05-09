@@ -15,7 +15,7 @@ class Buy : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = AddMoreMoneyBinding.inflate(layoutInflater)
-        setContentView(R.layout.add_more_money)
+        setContentView(binding.root)
 
         var balance = intent.getIntExtra(BUY, 0)
         binding.textViewMoreMoneyBalance.text = "$$balance"
@@ -23,10 +23,11 @@ class Buy : AppCompatActivity() {
         binding.buttonMoreMoneyAdd.setOnClickListener {
             balance += 100
             binding.textViewMoreMoneyBalance.text = "$$balance"
-            // todo: give chance to add even more money
         }
 
         binding.floatingActionButtonAddMoneyClose.setOnClickListener {
+            MainActivity.coins = balance
+            MainActivity.reload()
             finish()
         }
     }
