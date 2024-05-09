@@ -21,7 +21,7 @@ class Buy : AppCompatActivity() {
         binding.textViewMoreMoneyBalance.text = "$$balance"
 
         binding.buttonMoreMoneyAdd.setOnClickListener {
-            balance++
+            balance += 100
             binding.textViewMoreMoneyBalance.text = "$$balance"
             // todo: give chance to add even more money
         }
