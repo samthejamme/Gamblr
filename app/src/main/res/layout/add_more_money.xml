@@ -280,10 +280,11 @@
         android:id="@+id/imageView3"
         android:layout_width="253dp"
         android:layout_height="176dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintStart_toEndOf="@+id/imageView14"
         app:layout_constraintTop_toTopOf="@+id/imageView14"
-        app:srcCompat="@drawable/offline_dialog_background"
-        tools:layout_editor_absoluteX="518dp" />
+        app:srcCompat="@drawable/offline_dialog_background" />
 
     <TextView
         android:id="@+id/textView_scam"
