@@ -5,11 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gamblr.databinding.AddMoreMoneyBinding
 
+
 class Buy : AppCompatActivity() {
     companion object {
         val BUY = "More Money!!!"
     }
     lateinit var binding: AddMoreMoneyBinding
+    var balance = 0
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,18 +19,26 @@ class Buy : AppCompatActivity() {
         binding = AddMoreMoneyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var balance = intent.getIntExtra(BUY, 0)
-        binding.textViewMoreMoneyBalance.text = "$$balance"
+        balance = intent.getIntExtra(BUY, 0)
 
-        binding.buttonMoreMoneyAdd.setOnClickListener {
-            balance += 100
-            binding.textViewMoreMoneyBalance.text = "$$balance"
+        // todo: implement payment system that uses money
+        binding.buttonGoldCoins.setOnClickListener {
+            balance += 5
         }
-
-        binding.floatingActionButtonAddMoneyClose.setOnClickListener {
-            MainActivity.coins = balance
-            MainActivity.reload()
-            finish()
+        binding.buttonGoldCoins.setOnClickListener {
+            balance += 10
+        }
+        binding.buttonGoldCoins.setOnClickListener {
+            balance += 50
+        }
+        binding.buttonGoldCoins.setOnClickListener {
+            balance += 70
+        }
+        binding.buttonGoldCoins.setOnClickListener {
+            balance += 100
+        }
+        binding.buttonGoldCoins.setOnClickListener {
+            balance += 200
         }
     }
 }
