@@ -140,7 +140,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/imageView_goldCoins"
         app:layout_constraintTop_toBottomOf="@+id/imageView_goldCoins"
-        tools:text="100 coins" />
+        tools:text="5 coins" />
 
     <TextView
         android:id="@+id/textView_goldStack"
@@ -152,7 +152,7 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="@+id/imageView_goldStack"
         app:layout_constraintTop_toBottomOf="@+id/imageView_goldStack"
-        tools:text="100 coins" />
+        tools:text="50 coins" />
 
     <TextView
         android:id="@+id/textView_goldPile"
@@ -163,7 +163,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView_goldPile"
         app:layout_constraintStart_toStartOf="@+id/imageView_goldPile"
         app:layout_constraintTop_toBottomOf="@+id/imageView_goldPile"
-        tools:text="100 coins" />
+        tools:text="10 coins" />
 
     <TextView
         android:id="@+id/textView_goldBundle"
@@ -175,7 +175,7 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="@+id/imageView_goldPouch"
         app:layout_constraintTop_toBottomOf="@+id/imageView_goldPouch"
-        tools:text="100 coins" />
+        tools:text="70 coins" />
 
     <TextView
         android:id="@+id/textView_goldBowl"
@@ -197,7 +197,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView_goldVault"
         app:layout_constraintStart_toStartOf="@+id/imageView_goldVault"
         app:layout_constraintTop_toBottomOf="@+id/imageView_goldVault"
-        tools:text="100 coins" />
+        tools:text="200 coins" />
 
     <Button
         android:id="@+id/button_goldCoins"
