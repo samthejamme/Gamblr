@@ -267,4 +267,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_goldBundle"
         tools:text="$39.99" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="66dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="-16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:srcCompat="@drawable/bestDeal" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
