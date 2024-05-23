@@ -5,27 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button_moreMoney_add"
-        android:layout_width="198dp"
-        android:layout_height="99dp"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_moreMoney_balance" />
-
-    <TextView
-        android:id="@+id/textView_moreMoney_balance"
-        android:layout_width="187dp"
-        android:layout_height="70dp"
-        android:text="$8,000,000,000"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button_moreMoney_add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton_addMoney_close"
         android:layout_width="wrap_content"
@@ -36,4 +15,256 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="154dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="154dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView_goldPouch"
+        android:layout_width="148dp"
+        android:layout_height="112dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView17"
+        app:layout_constraintStart_toStartOf="@+id/imageView17"
+        app:layout_constraintTop_toTopOf="@+id/imageView17"
+        app:srcCompat="@drawable/gold_pouch" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="154dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="154dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView16"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView_goldVault"
+        android:layout_width="148dp"
+        android:layout_height="112dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15"
+        app:srcCompat="@drawable/gold_vault" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="154dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView17"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView_goldBowl"
+        android:layout_width="148dp"
+        android:layout_height="112dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="@+id/imageView16"
+        app:srcCompat="@drawable/gold_bowl" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="154dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/offline_dialog_background" />
+
+    <ImageView
+        android:id="@+id/imageView_goldStack"
+        android:layout_width="148dp"
+        android:layout_height="112dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView14"
+        app:srcCompat="@drawable/gold_stack" />
+
+    <ImageView
+        android:id="@+id/imageView_goldPile"
+        android:layout_width="148dp"
+        android:layout_height="112dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView12"
+        app:srcCompat="@drawable/gold_pile" />
+
+    <ImageView
+        android:id="@+id/imageView_goldCoins"
+        android:layout_width="148dp"
+        android:layout_height="112dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/imageView13"
+        app:srcCompat="@drawable/gold_coins" />
+
+    <TextView
+        android:id="@+id/textView_goldCoins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_goldCoins"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/imageView_goldCoins"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_goldCoins"
+        tools:text="100 coins" />
+
+    <TextView
+        android:id="@+id/textView_goldStack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_goldStack"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/imageView_goldStack"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_goldStack"
+        tools:text="100 coins" />
+
+    <TextView
+        android:id="@+id/textView_goldPile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_goldPile"
+        app:layout_constraintStart_toStartOf="@+id/imageView_goldPile"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_goldPile"
+        tools:text="100 coins" />
+
+    <TextView
+        android:id="@+id/textView_goldBundle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_goldPouch"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/imageView_goldPouch"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_goldPouch"
+        tools:text="100 coins" />
+
+    <TextView
+        android:id="@+id/textView_goldBowl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_goldBowl"
+        app:layout_constraintStart_toStartOf="@+id/imageView_goldBowl"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_goldBowl"
+        tools:text="100 coins" />
+
+    <TextView
+        android:id="@+id/textView_goldVault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_goldVault"
+        app:layout_constraintStart_toStartOf="@+id/imageView_goldVault"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_goldVault"
+        tools:text="100 coins" />
+
+    <Button
+        android:id="@+id/button_goldCoins"
+        android:layout_width="129dp"
+        android:layout_height="41dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+        app:layout_constraintEnd_toEndOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView_goldCoins"
+        tools:text="$9.99" />
+
+    <Button
+        android:id="@+id/button_goldStack"
+        android:layout_width="129dp"
+        android:layout_height="41dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView_goldPile"
+        tools:text="$19.99" />
+
+    <Button
+        android:id="@+id/button_goldPile"
+        android:layout_width="129dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="2dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView_goldStack"
+        tools:text="$29.99" />
+
+    <Button
+        android:id="@+id/button_goldVault"
+        android:layout_width="129dp"
+        android:layout_height="41dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView_goldVault"
+        tools:text="$99.99" />
+
+    <Button
+        android:id="@+id/button_goldBowl"
+        android:layout_width="129dp"
+        android:layout_height="41dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintEnd_toEndOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView_goldBowl"
+        tools:text="$49.99" />
+
+    <Button
+        android:id="@+id/button_goldBundle"
+        android:layout_width="129dp"
+        android:layout_height="41dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView17"
+        app:layout_constraintEnd_toEndOf="@+id/imageView17"
+        app:layout_constraintStart_toStartOf="@+id/imageView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView_goldBundle"
+        tools:text="$39.99" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

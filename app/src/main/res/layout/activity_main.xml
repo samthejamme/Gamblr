@@ -77,13 +77,13 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton_buyMoney"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
         android:layout_alignTop="@+id/textView_moneyCounter"
         android:layout_alignBottom="@+id/textView_moneyCounter"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="9dp"
         android:layout_toEndOf="@+id/textView_moneyCounter"
         android:clickable="true"
         app:fabCustomSize="28dp"
