@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonSpin.setOnClickListener {
-            if (bet > 0){
+            if (bet > 0 && coins != 0){
                 var x = (Math.random() * 13).toInt()
                 var y = (Math.random() * 13).toInt()
                 var z = (Math.random() * 13).toInt()
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonBetAdd.setOnClickListener {
-            if (coins < 100 || bet > coins || coins == 0) {
+            if (coins < 100 || bet > coins) {
                 val alertDialogBuilder = AlertDialog.Builder(this)
                 alertDialogBuilder.setTitle("Not Enough Coins!")
                 alertDialogBuilder.setMessage("Go buy more coins to keep winning!")
