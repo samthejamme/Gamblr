@@ -26,36 +26,23 @@ class Buy : AppCompatActivity() {
         binding.textViewScamCounter.text = "$${purcahses}/$100"
         binding.textViewDebtCard.text = "$${cardCash} left in card"
 
-        // todo: implement payment system that uses money
         binding.buttonGoldCoins.setOnClickListener {
-            balance += 5
-            purcahses += 9
-            cardCash -= 9.99
+            addMoney(5, 9, 9.99)
         }
         binding.buttonGoldCoins.setOnClickListener {
-            balance += 10
-            purcahses += 19
-            cardCash -= 19.99
+            addMoney(10, 19, 19.99)
         }
         binding.buttonGoldCoins.setOnClickListener {
-            balance += 50
-            purcahses += 29
-            cardCash -= 29.99
+            addMoney(50, 29, 29.99)
         }
         binding.buttonGoldCoins.setOnClickListener {
-            balance += 70
-            purcahses += 39
-            cardCash -= 39.99
+            addMoney(70, 39, 39.99)
         }
         binding.buttonGoldCoins.setOnClickListener {
-            balance += 100
-            purcahses += 49
-            cardCash -= 49.99
+            addMoney(100, 49, 49.99)
         }
         binding.buttonGoldCoins.setOnClickListener {
-            balance += 200
-            purcahses += 99
-            cardCash -= 99.99
+            addMoney(200, 99, 99.99)
         }
         binding.buttonScamCollector.setOnClickListener {
             if (purcahses % 100 == 0) {
@@ -72,5 +59,24 @@ class Buy : AppCompatActivity() {
             MainActivity.coins += balance
             finish()
         }
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun addMoney(bal : Int, pur : Int, mon : Double) {
+        if (cardCash - mon >= 0) {
+            balance += bal
+            purcahses += pur
+            cardCash -= mon
+        }
+        else {
+            val alertDialogBuilder = AlertDialog.Builder(this)
+            alertDialogBuilder.setTitle("Not Enough Funds")
+            alertDialogBuilder.setMessage("You need more funds to keep buying!")
+
+            alertDialogBuilder.setPositiveButton(android.R.string.yes) { dialog, which -> }
+            alertDialogBuilder.show()
+        }
+        binding.textViewScamCounter.text = "$${purcahses}/$100"
+        binding.textViewDebtCard.text = "$${cardCash} left in card"
     }
 }

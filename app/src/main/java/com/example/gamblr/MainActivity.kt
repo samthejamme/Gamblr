@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonBetAdd.setOnClickListener {
-            if (coins < 100 || bet > coins) {
+            if (coins < 100 || bet > coins || coins == 0) {
                 val alertDialogBuilder = AlertDialog.Builder(this)
                 alertDialogBuilder.setTitle("Not Enough Coins!")
                 alertDialogBuilder.setMessage("Go buy more coins to keep winning!")
