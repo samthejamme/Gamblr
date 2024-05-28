@@ -3,6 +3,7 @@ package com.example.gamblr
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gamblr.databinding.AddMoreMoneyBinding
 
@@ -13,8 +14,9 @@ class Buy : AppCompatActivity() {
     }
     lateinit var binding: AddMoreMoneyBinding
     var balance = 0
-    var purcahses = 0
-    var cardCash = 1000.00
+    var purcahses = MainActivity.purcahses
+    var cardCash = MainActivity.money.toInt()
+    var x = 0
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,46 +29,46 @@ class Buy : AppCompatActivity() {
         binding.textViewDebtCard.text = "$${cardCash} left in card"
 
         binding.buttonGoldCoins.setOnClickListener {
-            addMoney(5, 9, 9.99)
+            addMoney(5, 9, 10)
         }
-        binding.buttonGoldCoins.setOnClickListener {
-            addMoney(10, 19, 19.99)
+        binding.buttonGoldStack.setOnClickListener {
+            addMoney(10, 19, 20)
         }
-        binding.buttonGoldCoins.setOnClickListener {
-            addMoney(50, 29, 29.99)
+        binding.buttonGoldPile.setOnClickListener {
+            addMoney(50, 29, 30)
         }
-        binding.buttonGoldCoins.setOnClickListener {
-            addMoney(70, 39, 39.99)
+        binding.buttonGoldBundle.setOnClickListener {
+            addMoney(70, 39, 40)
         }
-        binding.buttonGoldCoins.setOnClickListener {
-            addMoney(100, 49, 49.99)
+        binding.buttonGoldBowl.setOnClickListener {
+            addMoney(100, 49, 50)
         }
-        binding.buttonGoldCoins.setOnClickListener {
-            addMoney(200, 99, 99.99)
+        binding.buttonGoldVault.setOnClickListener {
+            addMoney(200, 99, 100)
         }
         binding.buttonScamCollector.setOnClickListener {
-            if (purcahses % 100 == 0) {
+            if (purcahses > 100) {
                 MainActivity.coins += 10
-                val alertDialogBuilder = AlertDialog.Builder(this)
-                alertDialogBuilder.setTitle("Congratulations")
-                alertDialogBuilder.setMessage("You just collected your free bonus coins!")
-
-                alertDialogBuilder.setPositiveButton(android.R.string.yes) { dialog, which -> }
-                alertDialogBuilder.show()
+                Toast.makeText(this, "Congratulations! You just collected your free bonus coins!", Toast.LENGTH_SHORT).show()
+                purcahses -= 100
+                binding.textViewScamCounter.text = "$${purcahses}/$100"
             }
         }
         binding.floatingActionButtonAddMoneyClose.setOnClickListener {
-            MainActivity.coins += balance
+            MainActivity.coins = balance
+            MainActivity.purcahses = purcahses
+            MainActivity.money = cardCash + "$x".substring("$x".length - 2).toDouble() * 0.01
             finish()
         }
     }
 
     @SuppressLint("SetTextI18n")
-    fun addMoney(bal : Int, pur : Int, mon : Double) {
+    fun addMoney(bal : Int, pur : Int, mon : Int) {
         if (cardCash - mon >= 0) {
             balance += bal
             purcahses += pur
             cardCash -= mon
+            x += 99
         }
         else {
             val alertDialogBuilder = AlertDialog.Builder(this)
@@ -77,6 +79,6 @@ class Buy : AppCompatActivity() {
             alertDialogBuilder.show()
         }
         binding.textViewScamCounter.text = "$${purcahses}/$100"
-        binding.textViewDebtCard.text = "$${cardCash} left in card"
+        binding.textViewDebtCard.text = "$${cardCash}.${"$x".substring("$x".length - 2)} left in card"
     }
 }
