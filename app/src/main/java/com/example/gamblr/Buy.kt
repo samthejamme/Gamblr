@@ -14,6 +14,7 @@ class Buy : AppCompatActivity() {
     lateinit var binding: AddMoreMoneyBinding
     var balance = 0
     var purcahses = 0
+    var cardCash = 1000.00
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,32 +23,39 @@ class Buy : AppCompatActivity() {
         setContentView(binding.root)
 
         balance = intent.getIntExtra(BUY, 0)
-        binding.textViewScam.text = "$${purcahses}/$100"
+        binding.textViewScamCounter.text = "$${purcahses}/$100"
+        binding.textViewDebtCard.text = "$${cardCash} left in card"
 
         // todo: implement payment system that uses money
         binding.buttonGoldCoins.setOnClickListener {
             balance += 5
             purcahses += 9
+            cardCash -= 9.99
         }
         binding.buttonGoldCoins.setOnClickListener {
             balance += 10
             purcahses += 19
+            cardCash -= 19.99
         }
         binding.buttonGoldCoins.setOnClickListener {
             balance += 50
             purcahses += 29
+            cardCash -= 29.99
         }
         binding.buttonGoldCoins.setOnClickListener {
             balance += 70
             purcahses += 39
+            cardCash -= 39.99
         }
         binding.buttonGoldCoins.setOnClickListener {
             balance += 100
             purcahses += 49
+            cardCash -= 49.99
         }
         binding.buttonGoldCoins.setOnClickListener {
             balance += 200
             purcahses += 99
+            cardCash -= 99.99
         }
         binding.buttonScamCollector.setOnClickListener {
             if (purcahses % 100 == 0) {

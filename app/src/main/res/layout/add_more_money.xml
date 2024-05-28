@@ -134,7 +134,7 @@
         android:id="@+id/textView_goldCoins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5 coins"
+        android:text="TextView"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/imageView_goldCoins"
         app:layout_constraintHorizontal_bias="0.494"
@@ -146,7 +146,7 @@
         android:id="@+id/textView_goldStack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="50 coins"
+        android:text="TextView"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/imageView_goldStack"
         app:layout_constraintHorizontal_bias="0.505"
@@ -158,7 +158,7 @@
         android:id="@+id/textView_goldPile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10 coins"
+        android:text="TextView"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/imageView_goldPile"
         app:layout_constraintStart_toStartOf="@+id/imageView_goldPile"
@@ -169,7 +169,7 @@
         android:id="@+id/textView_goldBundle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="70 coins"
+        android:text="TextView"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/imageView_goldPouch"
         app:layout_constraintHorizontal_bias="0.505"
@@ -181,7 +181,7 @@
         android:id="@+id/textView_goldBowl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="100 coins"
+        android:text="TextView"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/imageView_goldBowl"
         app:layout_constraintStart_toStartOf="@+id/imageView_goldBowl"
@@ -192,7 +192,7 @@
         android:id="@+id/textView_goldVault"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="200 coins"
+        android:text="TextView"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/imageView_goldVault"
         app:layout_constraintStart_toStartOf="@+id/imageView_goldVault"
@@ -292,19 +292,19 @@
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:gravity="center_horizontal"
-        android:text="Every $100 purchase give you 15 FREE coins!!"
+        android:text="Every $100 purchase give you 10 FREE coins!!"
         android:textColor="#303030"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        tools:text="Every $100 purchase give you 15 FREE coins!!" />
+        tools:text="Every $100 purchase give you 10 FREE coins!!" />
 
     <TextView
         android:id="@+id/textView_scamCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text=""
+        android:text="$0/$100"
         android:textColor="#303030"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/textView_scam"
@@ -322,5 +322,16 @@
         app:layout_constraintStart_toStartOf="@+id/textView_scamCounter"
         app:layout_constraintTop_toBottomOf="@+id/textView_scamCounter"
         tools:text="Claim!!!" />
+
+    <TextView
+        android:id="@+id/textView_debtCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="$1000 left in card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="$1000 left in card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
