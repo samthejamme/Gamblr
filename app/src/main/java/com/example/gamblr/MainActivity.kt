@@ -17,8 +17,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var icons : MutableList<Int>
     companion object {
         var coins = 10000
-        var purcahses = 0
-        var money = 1000.00
     }
     var didWin = false
     @SuppressLint("InflateParams", "SetTextI18n")
@@ -67,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             else {
                 val alertDialogBuilder = AlertDialog.Builder(this)
                 alertDialogBuilder.setTitle("Not Enough Coins!")
-                alertDialogBuilder.setMessage("You need more coins to win!")
+                alertDialogBuilder.setMessage("You need to either bet more coins or buy more coins to win!")
 
                 alertDialogBuilder.setPositiveButton(android.R.string.yes) { dialog, which -> }
                 alertDialogBuilder.show()
@@ -112,6 +110,7 @@ class MainActivity : AppCompatActivity() {
     // todo: make the toast pop up after the spin animation is finished
     @SuppressLint("SetTextI18n")
     fun didWin(boolean: Boolean) {
+        val aba = (Math.random() * 5).toInt()
         if (boolean) {
             coins += bet
             earnings += bet
@@ -119,7 +118,6 @@ class MainActivity : AppCompatActivity() {
             binding.textViewMoneyCounter.text = "$${coins}"
 //            binding.textViewBetCount.text = "0"
             binding.textViewMoneyWon.text = "Total Winnings: $${earnings}"
-            val aba = (Math.random() * 5).toInt()
             when(aba) {
                 1 -> Toast.makeText(this, "JACKPOT!!!", Toast.LENGTH_SHORT).show()
                 0 -> Toast.makeText(this, "Nice!", Toast.LENGTH_SHORT).show()
@@ -131,7 +129,6 @@ class MainActivity : AppCompatActivity() {
         else {
             coins -= bet
             binding.textViewMoneyCounter.text = "$${coins}"
-            val aba = (Math.random() * 5).toInt()
             when(aba) {
                 1 -> Toast.makeText(this, "Keep trying!", Toast.LENGTH_SHORT).show()
                 0 -> Toast.makeText(this, "99% of gamblers quit just before they hit big!", Toast.LENGTH_SHORT).show()
