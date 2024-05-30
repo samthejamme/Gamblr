@@ -106,8 +106,6 @@ class MainActivity : AppCompatActivity() {
         binding.textViewMoneyCounter.text = "$${coins}"
     }
 
-    // todo: find a better way to tell them if they won or lost
-    // todo: make the toast pop up after the spin animation is finished
     @SuppressLint("SetTextI18n")
     fun didWin(boolean: Boolean) {
         val aba = (Math.random() * 5).toInt()
@@ -116,7 +114,6 @@ class MainActivity : AppCompatActivity() {
             earnings += bet
             didWin = false
             binding.textViewMoneyCounter.text = "$${coins}"
-//            binding.textViewBetCount.text = "0"
             binding.textViewMoneyWon.text = "Total Winnings: $${earnings}"
             when(aba) {
                 1 -> Toast.makeText(this, "JACKPOT!!!", Toast.LENGTH_SHORT).show()
