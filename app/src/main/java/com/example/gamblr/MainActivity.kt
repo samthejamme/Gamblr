@@ -1,5 +1,6 @@
 package com.example.gamblr
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
@@ -7,6 +8,7 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gamblr.databinding.ActivityMainBinding
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +17,11 @@ class MainActivity : AppCompatActivity() {
     var earnings = 0
     private lateinit var binding : ActivityMainBinding
     private lateinit var icons : MutableList<Int>
+    lateinit var imageX: ImageView
+    lateinit var imageY: ImageView
+    lateinit var imageZ: ImageView
+
+
     companion object {
         var coins = 10000
     }
@@ -46,9 +53,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonSpin.setOnClickListener {
             if (bet > 0 && coins - bet > 0){
-                var x = (Math.random() * 13).toInt()
-                var y = (Math.random() * 13).toInt()
-                var z = (Math.random() * 13).toInt()
+                var x = (Math.random() * 12).toInt()
+                var y = (Math.random() * 12).toInt()
+                var z = (Math.random() * 12).toInt()
                 // every fifth spin gets a 10% chance of a guaranteed win
                 if (spins % 5 == 0) {
                     if ((Math.random() * 100 + 1).toInt() % 10 == 0) {
@@ -57,6 +64,33 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 // todo: set the imageViews according to icons[x] etc.
+                binding.imageViewX.setImageResource(icons[x])
+                binding.imageViewY.setImageResource(icons[y])
+                binding.imageViewZ.setImageResource(icons[z])
+
+                imageX = findViewById(R.id.imageView_x)
+                imageY = findViewById(R.id.imageView_y)
+                imageZ = findViewById(R.id.imageView_z)
+
+                ObjectAnimator.ofFloat(imageX, "translationY", 350f)
+                    .apply{
+                        duration = 1000
+                        start()
+                    }
+
+                ObjectAnimator.ofFloat(imageY, "translationY", 350f)
+                    .apply{
+                        duration = 1000
+                        start()
+                    }
+
+                ObjectAnimator.ofFloat(imageZ, "translationY", 350f)
+                    .apply{
+                        duration = 1000
+                        start()
+                    }
+
+
                 if((x == y && z == y) || (x == 0 || x == 5) && (y == 5 || y == 0) && (z == 0 || z == 5)) {
                     didWin = true
                 }
