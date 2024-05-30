@@ -6,18 +6,17 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gamblr.databinding.AddMoreMoneyBinding
-import kotlin.math.absoluteValue
 
 
 class Buy : AppCompatActivity() {
     companion object {
-        val BUY = "More Money!!!"
+        const val BUY = "More Money!!!"
     }
-    lateinit var binding: AddMoreMoneyBinding
-    var balance = 0
-    var purcahses = 0.0
-    var cardCash = 1000
-    var x = 1000000000
+    private lateinit var binding: AddMoreMoneyBinding
+    private var balance = 0
+    private var purcahses = 0.0
+    private var cardCash = 1000
+    private var x = 1000000000
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +51,8 @@ class Buy : AppCompatActivity() {
                 MainActivity.coins += 10
                 Toast.makeText(this, "Congratulations! You just collected your free bonus coins!", Toast.LENGTH_SHORT).show()
                 purcahses -= 100
-                binding.textViewScamCounter.text = "$${purcahses}/$100"
+                val asdjfkl = purcahses.toString()
+                binding.textViewScamCounter.text = "$${asdjfkl.substring(0, asdjfkl.indexOf("."))}${asdjfkl.substring(asdjfkl.indexOf("."), asdjfkl.indexOf(".") + 3)}/$100.00"
             }
         }
         binding.floatingActionButtonAddMoneyClose.setOnClickListener {
@@ -74,7 +74,7 @@ class Buy : AppCompatActivity() {
             alertDialogBuilder.setTitle("Not Enough Funds")
             alertDialogBuilder.setMessage("You need more funds to keep buying!")
 
-            alertDialogBuilder.setPositiveButton(android.R.string.yes) { dialog, which -> }
+            alertDialogBuilder.setPositiveButton(android.R.string.yes) { _, _ -> }
             alertDialogBuilder.show()
         }
         val asdjfkl = purcahses.toString()
